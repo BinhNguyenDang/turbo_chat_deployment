@@ -64,6 +64,8 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore uploaded files in development
-/storage/*
+/storage/
+/log/*.log
+/tmp/cache/
+*.cache
 !/storage/.keep
-/public/uploads
