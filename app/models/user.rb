@@ -8,6 +8,7 @@ class User < ApplicationRecord
   
 
   has_one_attached :avatar
+  after_commit :add_default_avatar, on: %i[create update]
   # Define a callback to broadcast a message after a user is created
   # Show new user tab bar once a users is sign up in real time
   # append to "users" in div with users id in the index.html.erb
@@ -24,7 +25,7 @@ class User < ApplicationRecord
 
   # Define a callback to add a default avatar (if none is attached) after a user is created or updated
   # When a new user is created (create event) or an existing user is updated (update event), the add_default_avatar method will be invoked.
-  after_commit :add_default_avatar, on: %i[create update]
+  
   # Generates a resized thumbnail of the user's avatar
   def avatar_thumbnail
     avatar.variant(resize_to_limit: [150,150]).processed
