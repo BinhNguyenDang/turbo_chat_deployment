@@ -20,13 +20,13 @@ Rails.application.configure do
   # Note that "Hash#fetch" is used defensively so the app will blow up at boot-time if both 'DEFAULT_URL_HOST' and '
   # 'HEROKU_APP_NAME' aren't defined.
 
-  host = ENV['DEFAULT_URL_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
-  protocol = config.force_ssl ? 'https' : 'http'
+  # host = ENV['DEFAULT_URL_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
+  # protocol = config.force_ssl ? 'https' : 'http'
 
-  config.action_controller.default_url_options = {
-    host: host,
-    protocol: protocol
-  }
+  # config.action_controller.default_url_options = {
+  #   host: host,
+  #   protocol: protocolgit 
+  # }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
