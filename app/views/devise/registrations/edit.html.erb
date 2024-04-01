@@ -6,9 +6,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="mb-3">
-          <% if resource.avatar.attached? %>
-            <%= image_tag resource.avatar_thumbnail, class: "img-thumbnail mb-2", style: "max-width: 100px;" %>
-          <% end %>
+        
           <div class="mb-2">
             <%= f.label :avatar, class: "form-label" %>
             <%= f.file_field :avatar, class: "form-control" %>
