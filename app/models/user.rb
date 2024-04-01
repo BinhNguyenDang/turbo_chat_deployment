@@ -6,17 +6,17 @@ class User < ApplicationRecord
   # Define a scope to fetch all users except the current user
   scope :all_except, ->(user) { where.not(id: user)}
   
-  after_commit :add_default_avatar, on: %i[create update]
   has_one_attached :avatar
-  
+  has_many :messages
   # Define a callback to broadcast a message after a user is created
   # Show new user tab bar once a users is sign up in real time
   # append to "users" in div with users id in the index.html.erb
   after_create_commit { broadcast_append_to "users" }
   # Define a callback to broadcast an update after a user is created (def function below)
   after_update_commit :broadcast_status_update, if: :saved_change_to_status?
+  after_commit :add_default_avatar, on: %i[create update]
   # Define association: a user has many messages
-  has_many :messages
+  
   # Define an Active Storage attachment for user avatars
   
   # Define an enumeration for user status with three possible values: offline, away, and online
