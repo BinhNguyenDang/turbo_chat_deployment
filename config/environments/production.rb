@@ -21,7 +21,7 @@ Rails.application.configure do
   # 'HEROKU_APP_NAME' aren't defined.
 
   host = ENV['DEFAULT_URL_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
-  protocol = 'https'
+  protocol = config.force_ssl ? 'https' : 'http'
 
   config.action_controller.default_url_options = {
     host: host,
