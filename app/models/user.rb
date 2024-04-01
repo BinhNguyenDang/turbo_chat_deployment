@@ -6,9 +6,9 @@ class User < ApplicationRecord
   # Define a scope to fetch all users except the current user
   scope :all_except, ->(user) { where.not(id: user)}
   
-
-  has_one_attached :avatar
   after_commit :add_default_avatar, on: %i[create update]
+  has_one_attached :avatar
+  
   # Define a callback to broadcast a message after a user is created
   # Show new user tab bar once a users is sign up in real time
   # append to "users" in div with users id in the index.html.erb
