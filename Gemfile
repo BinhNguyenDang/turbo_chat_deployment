@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.0.2"
+ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -28,7 +28,7 @@ gem "jbuilder"
 
 gem 'hirb'
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -72,3 +72,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "pagy", "~> 6.5"
+
+gem 'aws-sdk-s3'

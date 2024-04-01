@@ -19,3 +19,4 @@
 
 * Correctly Targeting DOM Elements: By ensuring that the target for status updates (target: "user_status_#{self.id}") matches the ID of the DOM element intended for these updates, the system knows exactly where to apply the changes. This alignment between broadcast targets and DOM element IDs is essential for Turbo to correctly replace or update the content in real time.
 --------------------------------------------------------------------------------------------------------------------------------------------------
+
